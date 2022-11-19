@@ -1,5 +1,5 @@
 import { IChild } from "@/models"
-import { Input } from "../Input"
+import { BottomBar } from "../BottomBar"
 import { Nav } from "../Nav"
 
 const Layout = ({ children }: IChild) => {
@@ -7,7 +7,7 @@ const Layout = ({ children }: IChild) => {
     <div className="h-screen">
       <Nav />
       {children}
-      <Input />
+      <BottomBar />
     </div>
   )
 }

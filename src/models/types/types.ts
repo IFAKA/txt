@@ -8,12 +8,12 @@ export interface Note {
   desc: string
 }
 
-export type newNote = Omit<Note, "id">
+export type selectedNote = Omit<Note, "id">
 
 export interface Data {
   search: string
   notes: Note[]
-  newNote: newNote
+  selectedNote: Note
 }
 
 export type Partial<T> = {

@@ -1,6 +1,7 @@
-import { Data, newNote } from "../types"
+import { Data, Note } from "../types"
 
-export const emptyNote: newNote = {
+export const emptyNote: Note = {
+  id: 0,
   title: "",
   desc: "",
 }
@@ -8,5 +9,5 @@ export const emptyNote: newNote = {
 export const emptyData: Data = {
   search: "",
   notes: [],
-  newNote: emptyNote,
+  selectedNote: emptyNote,
 }

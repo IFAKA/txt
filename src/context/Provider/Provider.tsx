@@ -1,6 +1,7 @@
-import { Data, emptyData, IChild, IContext } from "@/models"
+import { Data, emptyData, emptyNote, IChild, IContext } from "@/models"
 import { cleanLocalStorage, setLocalStorage } from "@/utils"
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
 
 const Context = createContext<IContext | null>(null)
 
@@ -12,6 +13,7 @@ const initialState = localStorage.getItem("data")
 
 export const Provider = ({ children }: IChild) => {
   const [data, setData] = useState<Data>(initialState)
+  const { pathname } = useLocation()
 
   const setProp = (obj: Partial<Data>) =>
     setData((prev) => {
@@ -23,6 +25,10 @@ export const Provider = ({ children }: IChild) => {
     cleanLocalStorage()
     setData(emptyData)
   }
+
+  useEffect(() => {
+    pathname === "/" && setProp({ selectedNote: emptyNote })
+  }, [pathname])
 
   return (
     <Context.Provider

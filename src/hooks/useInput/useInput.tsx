@@ -7,7 +7,7 @@ const useInput = () => {
     data: { search },
     setProp,
   } = useData() as IContext
-  const [value, setValue] = useState(search ?? "")
+  const [value, setValue] = useState(search)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setProp({ search: e.target.value.toLowerCase() })

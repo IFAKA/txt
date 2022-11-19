@@ -3,25 +3,27 @@ import { BrowserRouter, Route } from "react-router-dom"
 import { SWRConfig } from "swr"
 import { Layout, Spinner } from "./components"
 import { Provider } from "./context"
-import { Home, Write } from "./pages"
+import { Home, TxtForm, Txt } from "./pages"
 import { fetcher } from "./services"
 import { RoutesWithNotFound } from "./utils"
 
 function App() {
   return (
     <Suspense fallback={<Spinner />}>
-      <Provider>
-        <SWRConfig value={{ fetcher }}>
-          <BrowserRouter>
+      <BrowserRouter>
+        <Provider>
+          <SWRConfig value={{ fetcher }}>
             <Layout>
               <RoutesWithNotFound>
                 <Route path="/" element={<Home />} />
-                <Route path="/write" element={<Write />} />
+                <Route path="/form" element={<TxtForm />} />
+                <Route path="/edit" element={<TxtForm />} />
+                <Route path="/:title" element={<Txt />} />
               </RoutesWithNotFound>
             </Layout>
-          </BrowserRouter>
-        </SWRConfig>
-      </Provider>
+          </SWRConfig>
+        </Provider>
+      </BrowserRouter>
     </Suspense>
   )
 }
