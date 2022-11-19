@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { BrowserRouter, Route } from "react-router-dom"
+import { HashRouter, Route } from "react-router-dom"
 import { SWRConfig } from "swr"
 import { Layout, Spinner } from "./components"
 import { Provider } from "./context"
@@ -10,7 +10,7 @@ import { RoutesWithNotFound } from "./utils"
 function App() {
   return (
     <Suspense fallback={<Spinner />}>
-      <BrowserRouter>
+      <HashRouter>
         <Provider>
           <SWRConfig value={{ fetcher }}>
             <Layout>
@@ -23,7 +23,7 @@ function App() {
             </Layout>
           </SWRConfig>
         </Provider>
-      </BrowserRouter>
+      </HashRouter>
     </Suspense>
   )
 }
