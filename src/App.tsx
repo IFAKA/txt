@@ -1,11 +1,14 @@
-import { Suspense } from "react"
+import { lazy, Suspense } from "react"
 import { HashRouter, Route } from "react-router-dom"
 import { SWRConfig } from "swr"
 import { Layout, Spinner } from "./components"
 import { Provider } from "./context"
-import { Home, TxtForm, Txt } from "./pages"
+import { Home } from "./pages"
 import { fetcher } from "./services"
 import { RoutesWithNotFound } from "./utils"
+
+const TxtForm = lazy(() => import("./pages/TxtForm/TxtForm"))
+const Txt = lazy(() => import("./pages/Txt/Txt"))
 
 function App() {
   return (
