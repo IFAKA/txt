@@ -46,7 +46,7 @@ const BottomBar = () => {
     } else if (pathname === "/form") {
       const selectedNote = notes.find((note) => note.id === id)
       setProp({ selectedNote })
-      navigate(`/${toURL(title)}`, { replace: true })
+      navigate(`/${toURL(`${selectedNote?.title}`)}`, { replace: true })
     }
   }
 

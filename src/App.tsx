@@ -17,7 +17,6 @@ function App() {
               <RoutesWithNotFound>
                 <Route path="/" element={<Home />} />
                 <Route path="/form" element={<TxtForm />} />
-                <Route path="/edit" element={<TxtForm />} />
                 <Route path="/:title" element={<Txt />} />
               </RoutesWithNotFound>
             </Layout>
