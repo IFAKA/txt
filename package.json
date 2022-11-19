@@ -49,6 +49,18 @@
     "typescript": "^4.8.4",
     "unimported": "^1.23.0",
     "vite": "^3.2.3",
+    "vite-plugin-pwa": "^0.13.3",
     "vitest": "^0.25.2"
-  }
+  },
+  "author": {
+    "name": "FAKA",
+    "email": "me@faka.dev",
+    "url": "http://faka.dev/"
+  },
+  "keywords": [
+    "react",
+    "pwa",
+    "starter-kit",
+    "vite"
+  ]
 }
