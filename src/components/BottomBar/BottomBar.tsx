@@ -43,7 +43,9 @@ const BottomBar = () => {
   const handleBack = () => {
     if (pathname === `/${toURL(title)}`) {
       navigate("/", { replace: true })
-    } else {
+    } else if (pathname === "/form") {
+      const selectedNote = notes.find((note) => note.id === id)
+      setProp({ selectedNote })
       navigate(`/${toURL(title)}`, { replace: true })
     }
   }
@@ -74,8 +76,12 @@ const BottomBar = () => {
 
   return (
     <div className="fixed bottom-0 px-2 py-1.5 w-full flex justify-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 border-t dark:border-t-slate-700">
-      <div className="flex justify-between w-full max-w-sm">
-        {!search && (
+      <div
+        className={`flex ${
+          !notes.length ? "justify-end" : "justify-between"
+        } w-full max-w-sm`}
+      >
+        {!!notes.length && !search && (
           <motion.button
             onClick={
               pathname === "/" ? handleSetting : id ? handleBack : handleClose
@@ -126,7 +132,6 @@ const BottomBar = () => {
                   type="search"
                   placeholder="Search"
                   required
-                  // autoFocus
                 />
               </>
             ) : (
