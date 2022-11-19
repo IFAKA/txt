@@ -86,6 +86,7 @@ const BottomBar = () => {
             onClick={
               pathname === "/" ? handleSetting : id ? handleBack : handleClose
             }
+            name="secondary action"
             initial={{ opacity: 0, scale: 0.95, rotate: -180 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
             className="border mr-2 rounded-full p-2 hover:bg-slate-50"
@@ -171,6 +172,7 @@ const BottomBar = () => {
         )}
         {!search && (
           <motion.button
+            name="primary action"
             onClick={
               pathname === "/"
                 ? handleWrite
