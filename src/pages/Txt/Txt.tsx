@@ -50,15 +50,16 @@ const Txt = () => {
           </motion.div>
         </>
       ) : (
-        <div className="w-full h-full flex flex-col justify-center items-center">
-          <div className="font-bold text-lg">This note is inexistent</div>
-          <motion.button
-            className="border rounded-full px-4 py-2 mt-2 hover:bg-slate-50"
-            onClick={() => nav("/")}
-          >
-            Go home
-          </motion.button>
-        </div>
+        <></>
+        // <div className="w-full h-full flex flex-col justify-center items-center">
+        //   <div className="font-bold text-lg">This note is inexistent</div>
+        //   <motion.button
+        //     className="border rounded-full px-4 py-2 mt-2 hover:bg-slate-50"
+        //     onClick={() => nav("/")}
+        //   >
+        //     Go home
+        //   </motion.button>
+        // </div>
       )}
     </>
   )
