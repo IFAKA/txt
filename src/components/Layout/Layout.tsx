@@ -1,13 +1,13 @@
 import { IChild } from "@/models"
-import { BottomBar } from "../BottomBar"
-import { Nav } from "../Nav"
+import { Bar } from "../Bar"
+import { Floater } from "../Floater"
 
 const Layout = ({ children }: IChild) => {
   return (
-    <div className="h-screen">
-      <Nav />
-      {children}
-      <BottomBar />
+    <div className="w-full flex flex-col items-center h-screen">
+      <Bar />
+      <div className="max-w-lg w-full h-full p-4">{children}</div>
+      <Floater />
     </div>
   )
 }

@@ -14,7 +14,7 @@ const initialState = localStorage.getItem("data")
 export const Provider = ({ children }: IChild) => {
   const [data, setData] = useState<Data>(initialState)
   const { pathname } = useLocation()
-  const navigate = useNavigate()
+  const nav = useNavigate()
 
   const setProp = (obj: Partial<Data>) =>
     setData((prev) => {
@@ -32,7 +32,7 @@ export const Provider = ({ children }: IChild) => {
   }, [pathname])
 
   useEffect(() => {
-    !data.notes.length && navigate("/form", { replace: true })
+    !data.notes.length && nav("/form", { replace: true })
   }, [])
 
   return (

@@ -1,4 +1,4 @@
-export * from "./BottomBar"
+export * from "./Bar"
+export * from "./Floater"
 export * from "./Layout"
-export * from "./Nav"
 export * from "./Spinner"

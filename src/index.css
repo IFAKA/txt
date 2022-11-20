@@ -28,7 +28,7 @@ input[type="search"]::-webkit-search-cancel-button {
   :root {
     background-color: #ffffff;
   }
-  .me {
+  .standup {
     background: rgb(255, 255, 255);
     background: radial-gradient(
       circle,
@@ -38,7 +38,7 @@ input[type="search"]::-webkit-search-cancel-button {
   }
 }
 @media (prefers-color-scheme: dark) {
-  .me {
+  .standup {
     background: rgb(30 41 59 / var(--tw-bg-opacity));
     background: radial-gradient(
       circle,
