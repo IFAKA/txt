@@ -7,7 +7,7 @@ import { fetcher } from "./services"
 import { RoutesWithNotFound } from "./utils"
 
 const Home = lazy(() => import("./pages/Home/Home"))
-const Form = lazy(() => import("./pages/Form/Form"))
+const Form = lazy(() => import("./pages/TxtForm/TxtForm"))
 const Txt = lazy(() => import("./pages/Txt/Txt"))
 
 function App() {
