@@ -3,7 +3,9 @@ import { emptyNote, IContext } from "@/models"
 import { motion } from "framer-motion"
 import { useEffect, useMemo } from "react"
 import { RiHome2Line } from "react-icons/ri"
+import ReactMarkdown from "react-markdown"
 import { useNavigate, useParams } from "react-router-dom"
+import remarkGfm from "remark-gfm"
 
 const Txt = () => {
   const {
@@ -26,32 +28,13 @@ const Txt = () => {
       {title && desc ? (
         <>
           <motion.div
-            className="mx-2 pb-4 pt-3 text-xl w-full font-semibold"
-            initial={{ opacity: 0, scale: 0.95, x: -20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 300,
-              damping: 20,
-              duration: 0.5,
-            }}
-          >
-            {title}
-          </motion.div>
-          <motion.div
-            className="mx-2 w-full pb-16 whitespace-pre-wrap"
+            className="w-full pb-16 whitespace-pre-wrap"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
           >
-            {desc}
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{desc}</ReactMarkdown>
           </motion.div>
-          <motion.div
-            className="mx-2 w-full pb-16 whitespace-pre-wrap"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-          ></motion.div>
         </>
       ) : (
         <div className="w-full h-full flex flex-col justify-center items-center">

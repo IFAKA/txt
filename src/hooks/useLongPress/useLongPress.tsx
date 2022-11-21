@@ -1,15 +1,16 @@
+import { Note } from "@/models"
 import { useRef } from "react"
 
 interface longProps {
-  onClick: any
-  onLongPress: any
+  onClick: <T extends string>(...args: T[]) => void
+  onLongPress: <T extends Note>(...args: T[]) => void
 }
 
 export default function useLongPress({ onClick, onLongPress }: longProps) {
   const timerRef = useRef<NodeJS.Timeout>()
   const isLongPress = useRef(false)
 
-  function startPressTimer<T>(value: T) {
+  function startPressTimer<T extends Note>(value: T) {
     isLongPress.current = false
     timerRef.current = setTimeout(() => {
       isLongPress.current = true
@@ -17,10 +18,10 @@ export default function useLongPress({ onClick, onLongPress }: longProps) {
     }, 500)
   }
 
-  function handleOnMouseDown<T>(value: T) {
+  function handleOnMouseDown<T extends Note>(value: T) {
     startPressTimer(value)
   }
-  function handleOnTouchStart<T>(value: T) {
+  function handleOnTouchStart<T extends Note>(value: T) {
     startPressTimer(value)
   }
 

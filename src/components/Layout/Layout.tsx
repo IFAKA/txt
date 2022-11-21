@@ -15,7 +15,7 @@ const Layout = ({ children }: IChild) => {
         } w-full h-[calc(100vh-48px)] overflow-auto`}
       >
         <div
-          className={`max-w-lg w-full p-4 ${
+          className={`max-w-xl w-full p-4 ${
             pathname === "/" && "grid gap-4 mb-10"
           }`}
         >

@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react"
 import { HashRouter, Route } from "react-router-dom"
 import { SWRConfig } from "swr"
-import { Layout, Modal, Spinner } from "./components"
+import { Layout, Spinner } from "./components"
 import { Provider } from "./context"
 import { fetcher } from "./services"
 import { RoutesWithNotFound } from "./utils"
