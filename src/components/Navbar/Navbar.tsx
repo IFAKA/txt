@@ -20,11 +20,11 @@ const Navbar = () => {
 
   return (
     <div className="sticky border-b h-12 top-0 w-full flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 border-t dark:border-t-slate-700">
-      <div className="justify-center flex w-full max-w-xl relative">
+      <div className="justify-center flex w-full max-w-2xl relative">
         {pathname !== "/" && pathname !== "/form" && title && desc && (
           <motion.button
             onClick={back}
-            className="absolute left-0 top-0 -mt-2 rounded-full ml-1 p-3 hover:bg-slate-50"
+            className="absolute left-0 -mt-5 rounded-full ml-1 p-3 hover:bg-slate-50"
             aria-label="secondary action"
             initial={{ opacity: 0, scale: 0.95, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -37,10 +37,6 @@ const Navbar = () => {
           >
             <RiArrowLeftSLine />
           </motion.button>
-        )}
-
-        {pathname !== "/" && pathname !== "/form" && (
-          <div className="font-semibold">{selectedNote.title}</div>
         )}
 
         {pathname === "/" && (
@@ -72,7 +68,7 @@ const Navbar = () => {
 
         {pathname === "/form" && (
           <motion.div
-            className="font-semibold"
+            className="font-semibold text-xl"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{

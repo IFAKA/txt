@@ -45,7 +45,7 @@ const Home = () => {
           onTouchStart={() => onTouchStart(note)}
           onMouseUp={onMouseUp}
           onTouchEnd={onTouchEnd}
-          className="w-full mb-4 select-none"
+          className="w-full select-none"
           key={note.id}
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
