@@ -2,6 +2,7 @@
 /// <reference types='vite/client'/>
 
 import react from "@vitejs/plugin-react"
+import babel from "vite-plugin-babel"
 import path from "path"
 
 import { defineConfig } from "vite"

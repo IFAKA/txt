@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div className="sticky border-b h-12 top-0 w-full flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 border-t dark:border-t-slate-700">
-      <div className="justify-center flex w-full max-w-2xl relative">
+      <div className="justify-center flex w-full max-w-3xl relative">
         {pathname !== "/" && pathname !== "/form" && title && desc && (
           <motion.button
             onClick={back}

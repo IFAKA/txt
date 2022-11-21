@@ -49,7 +49,7 @@ const FloatButton = () => {
         (pathname !== "/" && pathname !== "/form" && title && desc)) &&
         !search && (
           <div className="fixed bottom-0 w-full flex justify-center">
-            <div className="max-w-lg w-full relative">
+            <div className="max-w-3xl w-full relative">
               <motion.button
                 onClick={handleClick}
                 disabled={pathname === "/form" && !(title && desc)}

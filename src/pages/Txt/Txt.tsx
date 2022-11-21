@@ -3,9 +3,12 @@ import { emptyNote, IContext } from "@/models"
 import { motion } from "framer-motion"
 import { useEffect, useMemo } from "react"
 import { RiHome2Line } from "react-icons/ri"
-import ReactMarkdown from "react-markdown"
 import { useNavigate, useParams } from "react-router-dom"
+
+import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { vs as style } from "react-syntax-highlighter/dist/esm/styles/prism"
 
 const Txt = () => {
   const {
@@ -46,7 +49,31 @@ const Txt = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
           >
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{desc}</ReactMarkdown>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                code: ({ children }) => {
+                  return (
+                    <SyntaxHighlighter
+                      style={style}
+                      language={"tsx"}
+                      wrapLines={true}
+                      customStyle={{
+                        borderRadius: "0.7em",
+                        backgroundColor:
+                          "rgb(241 245 249 / var(--tw-bg-opacity))",
+                        overflow: "auto",
+                      }}
+                      key={String(children)}
+                    >
+                      {String(children)}
+                    </SyntaxHighlighter>
+                  )
+                },
+              }}
+            >
+              {desc}
+            </ReactMarkdown>
           </motion.div>
         </>
       ) : (
