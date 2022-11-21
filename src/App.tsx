@@ -7,7 +7,7 @@ import { fetcher } from "./services"
 import { RoutesWithNotFound } from "./utils"
 
 const Home = lazy(() => import("./pages/Home/Home"))
-const Form = lazy(() => import("./pages/TxtForm/TxtForm"))
+const TxtForm = lazy(() => import("./pages/TxtForm/TxtForm"))
 const Txt = lazy(() => import("./pages/Txt/Txt"))
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
             <Layout>
               <RoutesWithNotFound>
                 <Route path="/" element={<Home />} />
-                <Route path="/form" element={<Form />} />
+                <Route path="/form" element={<TxtForm />} />
                 <Route path="/note/:id" element={<Txt />} />
               </RoutesWithNotFound>
             </Layout>
