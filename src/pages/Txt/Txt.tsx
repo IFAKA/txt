@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { useEffect, useMemo } from "react"
 import { RiHome2Line } from "react-icons/ri"
 import { useNavigate, useParams } from "react-router-dom"
-import SyntaxHighlighter from "react-syntax-highlighter"
 
 const Txt = () => {
   const {
@@ -52,16 +51,7 @@ const Txt = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-          >
-            {/* <SyntaxHighlighter
-              language="typescript"
-              wrapLongLines={true}
-              useInlineStyles={true}
-              style={{ vs: { backgroundColor: "white" } }}
-            >
-              {desc}
-            </SyntaxHighlighter> */}
-          </motion.div>
+          ></motion.div>
         </>
       ) : (
         <div className="w-full h-full flex flex-col justify-center items-center">

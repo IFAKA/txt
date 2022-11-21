@@ -13,9 +13,11 @@ const Home = () => {
   const nav = useNavigate()
   const filteredNotes = useMemo(
     () =>
-      notes.filter(({ title }) =>
-        title.toLowerCase().includes(search.toLowerCase()),
-      ) ?? notes,
+      notes
+        .filter(({ title }) =>
+          title.toLowerCase().includes(search.toLowerCase()),
+        )
+        .reverse() ?? notes,
     [notes.length, search],
   )
 
@@ -36,7 +38,7 @@ const Home = () => {
 
   return (
     <>
-      {filteredNotes?.reverse().map((note, i) => (
+      {filteredNotes?.map((note, i) => (
         <motion.button
           onClick={() => onClick(note.id)}
           onMouseDown={() => onMouseDown(note)}
