@@ -1,7 +1,7 @@
-import { Data, emptyData, emptyNote, IChild, IContext } from "@/models"
+import { Data, emptyData, IChild, IContext } from "@/models"
 import { cleanLocalStorage, setLocalStorage } from "@/utils"
 import { createContext, useContext, useEffect, useState } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const Context = createContext<IContext | null>(null)
 
@@ -13,7 +13,6 @@ const initialState = localStorage.getItem("data")
 
 export const Provider = ({ children }: IChild) => {
   const [data, setData] = useState<Data>(initialState)
-  const { pathname } = useLocation()
   const nav = useNavigate()
 
   const setProp = (obj: Partial<Data>) =>
@@ -26,10 +25,6 @@ export const Provider = ({ children }: IChild) => {
     cleanLocalStorage()
     setData(emptyData)
   }
-
-  useEffect(() => {
-    pathname === "/" && setProp({ selectedNote: emptyNote })
-  }, [pathname])
 
   useEffect(() => {
     !data.notes.length && nav("/form", { replace: true })

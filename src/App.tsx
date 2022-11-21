@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react"
 import { HashRouter, Route } from "react-router-dom"
 import { SWRConfig } from "swr"
-import { Layout, Spinner } from "./components"
+import { Layout, Modal, Spinner } from "./components"
 import { Provider } from "./context"
 import { fetcher } from "./services"
 import { RoutesWithNotFound } from "./utils"
@@ -20,7 +20,7 @@ function App() {
               <RoutesWithNotFound>
                 <Route path="/" element={<Home />} />
                 <Route path="/form" element={<TxtForm />} />
-                <Route path="/:title" element={<Txt />} />
+                <Route path="/note/:id" element={<Txt />} />
               </RoutesWithNotFound>
             </Layout>
           </SWRConfig>

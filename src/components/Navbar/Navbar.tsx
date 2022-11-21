@@ -11,7 +11,7 @@ const Navbar = () => {
   } = useData() as IContext
   const { pathname } = useLocation()
   const nav = useNavigate()
-  const { id } = selectedNote
+  const { id, title, desc } = selectedNote
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setProp({ search: e.target.value })
@@ -19,13 +19,13 @@ const Navbar = () => {
   const back = () => nav("/", { replace: true })
 
   return (
-    <div className="sticky z-10 h-12 top-0 border-b w-full flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 border-t dark:border-t-slate-700">
+    <div className="sticky border-b h-12 top-0 w-full flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 border-t dark:border-t-slate-700">
       <div
         className={`${
           (pathname === "/" || pathname === "/form") && "justify-center"
         } flex w-full max-w-xl`}
       >
-        {pathname !== "/" && pathname !== "/form" && (
+        {pathname !== "/" && pathname !== "/form" && title && desc && (
           <motion.button
             onClick={back}
             className="rounded-full ml-1 p-3 hover:bg-slate-50"
