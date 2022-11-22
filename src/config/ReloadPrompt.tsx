@@ -3,6 +3,7 @@ import "./ReloadPrompt.css"
 
 import { useEffect } from "react"
 import { useRegisterSW } from "virtual:pwa-register/react"
+import { RiCheckboxCircleLine } from "react-icons/ri"
 
 function ReloadPrompt() {
   const {
@@ -31,9 +32,12 @@ function ReloadPrompt() {
   return (
     <>
       {(offlineReady || needRefresh) && (
-        <div className="z-10 p-4 fixed inset-0 justify-center items-center flex overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+        <div
+          className="z-10 p-4 fixed inset-0 justify-center items-center flex overflow-x-hidden overflow-y-auto outline-none focus:outline-none"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
+        >
           <motion.div
-            className="select-none rounded-xl max-w-xs relative bg-white p-5 grid gap-4 place-items-center"
+            className="select-none rounded-xl max-w-xs relative dark:bg-slate-800 bg-white p-5 grid gap-4 place-items-center"
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -45,7 +49,10 @@ function ReloadPrompt() {
             }}
           >
             {offlineReady ? (
-              <span>Available offline</span>
+              <div className="flex justify-center w-full">
+                <RiCheckboxCircleLine size={20} />
+                <span>Available offline</span>
+              </div>
             ) : (
               <span>
                 New content available, click on reload button to update.

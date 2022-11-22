@@ -28,7 +28,7 @@ const Modal = () => {
           onClick={closeModal}
         >
           <motion.div
-            className="select-none rounded-xl max-w-xs relative bg-white p-5 grid gap-4 place-items-center"
+            className="select-none rounded-xl max-w-xs relative dark:bg-slate-800 bg-white  p-5 grid gap-4 place-items-center"
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -46,7 +46,7 @@ const Modal = () => {
             <div className="flex justify-between w-full">
               <motion.button
                 onClick={closeModal}
-                className="p-3 rounded-full w-fit flex justify-center items-center border hover:bg-slate-50"
+                className="p-3 dark:hover:bg-slate-700 hover:bg-slate-50 rounded-full w-fit flex justify-center items-center border"
                 type="button"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -63,7 +63,7 @@ const Modal = () => {
               </motion.button>
               <motion.button
                 onClick={() => remove(selectedNote.id)}
-                className="p-3 rounded-full w-fit flex justify-center items-center border hover:bg-slate-50"
+                className="p-3 dark:hover:bg-slate-700 hover:bg-slate-50 rounded-full w-fit flex justify-center items-center border"
                 type="button"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -74,6 +74,7 @@ const Modal = () => {
                   stiffness: 300,
                   damping: 15,
                   duration: 0.3,
+                  delay: 0.1,
                 }}
               >
                 <RiCheckLine />

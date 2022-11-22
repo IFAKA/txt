@@ -45,7 +45,7 @@ const Home = () => {
           onTouchStart={() => onTouchStart(note)}
           onMouseUp={onMouseUp}
           onTouchEnd={onTouchEnd}
-          className="w-full select-none"
+          className="w-full select-none rounded-xl"
           key={note.id}
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -58,7 +58,7 @@ const Home = () => {
           }}
         >
           <motion.div
-            className="text-left rounded-xl font-semibold w-full px-4 py-3 border cursor-pointer"
+            className="text-left rounded-xl font-semibold w-full px-4 py-3 border cursor-pointer dark:hover:bg-slate-700 hover:bg-slate-50"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 400, damping: 20 }}
