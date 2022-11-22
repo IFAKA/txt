@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react"
 import { HashRouter, Route } from "react-router-dom"
 import { Layout, Spinner } from "./components"
+import { ReloadPrompt } from "./config"
 import { Provider } from "./context"
 import { RoutesWithNotFound } from "./utils"
 
@@ -11,6 +12,7 @@ const Txt = lazy(() => import("./pages/Txt/Txt"))
 function App() {
   return (
     <Suspense fallback={<Spinner />}>
+      <ReloadPrompt />
       <HashRouter>
         <Provider>
           <Layout>

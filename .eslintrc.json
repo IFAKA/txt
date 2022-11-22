@@ -27,7 +27,6 @@
     "react/jsx-props-no-spreading": ["warn"],
     "react/no-unescaped-entities": ["off"],
     "camelcase": "error",
-    "spaced-comment": "error",
     "quotes": ["error", "double"],
     "no-duplicate-imports": "error"
   },
