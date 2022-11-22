@@ -1,5 +1,7 @@
+import { motion } from "framer-motion"
 import "./ReloadPrompt.css"
 
+import { useEffect } from "react"
 import { useRegisterSW } from "virtual:pwa-register/react"
 
 function ReloadPrompt() {
@@ -21,33 +23,46 @@ function ReloadPrompt() {
     setNeedRefresh(false)
   }
 
+  useEffect(() => {
+    const timer = setTimeout(() => close(), 3000)
+    return () => clearTimeout(timer)
+  }, [offlineReady])
+
   return (
-    <div className="ReloadPrompt-container">
+    <>
       {(offlineReady || needRefresh) && (
-        <div className="ReloadPrompt-toast">
-          <div className="ReloadPrompt-message">
+        <div className="z-10 p-4 fixed inset-0 justify-center items-center flex overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+          <motion.div
+            className="select-none rounded-xl max-w-xs relative bg-white p-5 grid gap-4 place-items-center"
+            onClick={(e) => e.stopPropagation()}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 15,
+              duration: 0.3,
+            }}
+          >
             {offlineReady ? (
-              <span>App ready to work offline</span>
+              <span>Available offline</span>
             ) : (
               <span>
                 New content available, click on reload button to update.
               </span>
             )}
-          </div>
-          {needRefresh && (
-            <button
-              className="ReloadPrompt-toast-button"
-              onClick={() => updateServiceWorker(true)}
-            >
-              Reload
-            </button>
-          )}
-          <button className="ReloadPrompt-toast-button" onClick={() => close()}>
-            Close
-          </button>
+            {needRefresh && (
+              <button
+                className="border px-3 py-2 rounded-xl"
+                onClick={() => updateServiceWorker(true)}
+              >
+                Reload
+              </button>
+            )}
+          </motion.div>
         </div>
       )}
-    </div>
+    </>
   )
 }
 

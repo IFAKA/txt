@@ -18,6 +18,7 @@ export default defineConfig({
         "apple-touch-icon.png",
       ],
       // switch to "true" to enable sw on development
+      // if offline is activated, it won't work
       devOptions: {
         enabled: false,
       },
