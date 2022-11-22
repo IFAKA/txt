@@ -1,6 +1,6 @@
 import { useData } from "@/context"
 import { emptyNote, IContext } from "@/models"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { RiCheckLine, RiCloseLine } from "react-icons/ri"
 import { useLocation } from "react-router-dom"
 
@@ -20,23 +20,29 @@ const Modal = () => {
   const closeModal = () => setProp({ selectedNote: emptyNote })
 
   return (
-    <>
+    <AnimatePresence>
       {pathname === "/" && !!selectedNote.title && (
-        <div
+        <motion.div
           className="z-10 p-4 fixed inset-0 justify-center items-center flex overflow-x-hidden overflow-y-auto outline-none focus:outline-none"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
           onClick={closeModal}
         >
           <motion.div
-            className="select-none rounded-xl max-w-xs relative dark:bg-slate-800 bg-white  p-5 grid gap-4 place-items-center"
+            className="select-none rounded-xl max-w-xs relative dark:bg-slate-800 bg-white p-5 grid gap-4 place-items-center"
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
             transition={{
               type: "spring",
               stiffness: 300,
               damping: 15,
               duration: 0.3,
+              delay: 0.1,
             }}
           >
             <div className="text-xl font-semibold">
@@ -81,9 +87,9 @@ const Modal = () => {
               </motion.button>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       )}
-    </>
+    </AnimatePresence>
   )
 }
 export default Modal

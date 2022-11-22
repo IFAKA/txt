@@ -1,7 +1,7 @@
 import { useData } from "@/context"
 import { useLongPress } from "@/hooks"
 import { emptyNote, IContext, Note } from "@/models"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { useEffect, useMemo } from "react"
 import { useNavigate } from "react-router-dom"
 
@@ -37,7 +37,7 @@ const Home = () => {
     useLongPress({ onClick: goToNote, onLongPress: openModal })
 
   return (
-    <>
+    <AnimatePresence>
       {filteredNotes?.map((note, i) => (
         <motion.button
           onClick={() => onClick(note.id)}
@@ -61,13 +61,21 @@ const Home = () => {
             className="text-left rounded-xl font-semibold w-full px-4 py-3 border cursor-pointer dark:hover:bg-slate-700 hover:bg-slate-50"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 20,
+              duration: 0.2,
+            }}
           >
             {note.title}
           </motion.div>
         </motion.button>
       ))}
-    </>
+    </AnimatePresence>
   )
 }
 
