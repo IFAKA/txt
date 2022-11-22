@@ -42,6 +42,10 @@ Smooth UX, routes were built with the back button in mind.
 
 ![Delete](/public/docs/delete.gif)
 
+### Offline
+
+![Offline](/public/docs/offline.gif)
+
 ### Errors
 
 ![Errors](/public/docs/wrong-routes.gif)
