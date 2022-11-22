@@ -25,7 +25,7 @@ function ReloadPrompt() {
   }
 
   useEffect(() => {
-    const timer = setTimeout(() => close(), 3000)
+    const timer = setTimeout(() => close(), 2000)
     return () => clearTimeout(timer)
   }, [offlineReady])
 
