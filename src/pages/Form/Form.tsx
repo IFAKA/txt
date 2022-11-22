@@ -9,9 +9,7 @@ const Form = () => {
   } = useData() as IContext
   const { desc, title, id } = selectedNote
 
-  const re = /^[A-Za-z0-9\s,']+$/
   const handleTitle = (e: React.ChangeEvent<HTMLInputElement>) =>
-    (e.target.value === "" || re.test(e.target.value)) &&
     setProp({
       selectedNote: { id, desc, title: e.target.value },
     })

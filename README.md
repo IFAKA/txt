@@ -52,5 +52,9 @@ Smooth UX, routes were built with the back button in mind.
 - [ ] Code formater (maybe find how to implement prismjs plugin for that)
 - [ ] Improve search functionability
 - [ ] PWA or migrate project to React Native
+- [ ] Lazy loading in list (only render components that are on the viewport)
+- [ ] Add date
+- [ ] Add reading time aproximation
+- [ ] Add task (they will have checkbox in the right in order to be able to discard them easily. Once you check a popup will apear to check completition. If you accept, it will be deleted from the list)
 
 If you found something, create an issue to discuss it.

@@ -54,7 +54,7 @@ const Home = () => {
             stiffness: 300,
             damping: 25,
             duration: 0.2,
-            delay: Math.sqrt(i) * 0.3,
+            delay: Math.sqrt(i + 1) * 0.3,
           }}
         >
           <motion.div
