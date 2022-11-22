@@ -33,9 +33,13 @@ function ReloadPrompt() {
     <>
       <AnimatePresence>
         {(offlineReady || needRefresh) && (
-          <div
+          <motion.div
             className="z-10 p-4 fixed inset-0 justify-center items-center flex overflow-x-hidden overflow-y-auto outline-none focus:outline-none"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
           >
             <motion.div
               className="select-none rounded-xl max-w-xs relative dark:bg-slate-800 bg-white p-5 grid gap-4 place-items-center"
@@ -51,7 +55,7 @@ function ReloadPrompt() {
               }}
             >
               {offlineReady ? (
-                <div className="flex">
+                <div className="flex items-center">
                   <RiCheckboxCircleLine size={20} />
                   <span className="ml-2">Available offline</span>
                 </div>
@@ -69,7 +73,7 @@ function ReloadPrompt() {
                 </button>
               )}
             </motion.div>{" "}
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </>
