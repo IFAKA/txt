@@ -52,6 +52,7 @@ function ReloadPrompt() {
                 stiffness: 300,
                 damping: 15,
                 duration: 0.3,
+                delay: 0.1,
               }}
             >
               {offlineReady ? (
