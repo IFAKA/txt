@@ -1,10 +1,9 @@
 import ReactMarkdown from "react-markdown"
-import remarkGfm from "remark-gfm"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { vs as style } from "react-syntax-highlighter/dist/esm/styles/prism"
-import { IChild } from "@/models"
+import remarkGfm from "remark-gfm"
 
-const MDContainer = ({ children }: IChild) => {
+const MDContainer = ({ children }: { children: string }) => {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
