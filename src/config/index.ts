@@ -1,1 +1,1 @@
-export { default as ReloadPrompt } from "./ReloadPrompt"
+export { default as ServiceWorkerModal } from "./ServiceWorkerModal"

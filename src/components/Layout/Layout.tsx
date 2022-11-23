@@ -1,7 +1,7 @@
 import { IChild } from "@/models"
 import { useLocation } from "react-router-dom"
 import { FloatButton } from "../FloatButton"
-import { Modal } from "../Modal"
+import { DeleteModal } from "../DeleteModal"
 import { Navbar } from "../Navbar"
 
 const Layout = ({ children }: IChild) => {
@@ -23,7 +23,7 @@ const Layout = ({ children }: IChild) => {
         </div>
       </div>
       <FloatButton />
-      <Modal />
+      <DeleteModal />
     </>
   )
 }
