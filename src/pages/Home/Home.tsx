@@ -11,6 +11,7 @@ const Home = () => {
     setProp,
   } = useData() as IContext
   const nav = useNavigate()
+
   const filteredNotes = useMemo(
     () =>
       notes

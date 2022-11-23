@@ -17,7 +17,7 @@ export const RoutesWithNotFound = ({ children }: IChild) => {
             </div>
             <motion.button
               onClick={() => nav("/", { replace: true })}
-              className="bg-white shadow-md border ml-2 rounded-full p-3 hover:bg-slate-50 cursor-pointer"
+              className="dark:bg-slate-800 bg-white shadow-md border ml-2 rounded-full p-3 hover:bg-slate-50 cursor-pointer"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.1 }}

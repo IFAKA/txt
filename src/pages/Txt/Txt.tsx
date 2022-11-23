@@ -13,6 +13,7 @@ const Txt = () => {
   } = useData() as IContext
   const params = useParams()
   const nav = useNavigate()
+
   const { title, desc, id } = useMemo(
     () => notes.find((note) => note.id === params.id) ?? emptyNote,
     [params.id],
@@ -53,7 +54,7 @@ const Txt = () => {
           <div className="font-bold text-lg mb-3">This note is inexistent</div>
           <motion.button
             onClick={() => nav("/", { replace: true })}
-            className="bg-white shadow-md border ml-2 rounded-full p-3 hover:bg-slate-50 cursor-pointer"
+            className="dark:bg-slate-800 bg-white shadow-md border ml-2 rounded-full p-3 hover:bg-slate-50 cursor-pointer"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.1 }}

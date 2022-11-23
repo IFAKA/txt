@@ -44,9 +44,7 @@ const FloatButton = () => {
 
   return (
     <>
-      {(pathname === "/" ||
-        pathname === "/form" ||
-        (pathname !== "/" && pathname !== "/form" && title && desc)) &&
+      {!(pathname !== "/" && pathname !== "/form" && !(title && desc)) &&
         !search && (
           <div className="fixed bottom-0 w-full flex justify-center">
             <div className="max-w-3xl w-full relative">
