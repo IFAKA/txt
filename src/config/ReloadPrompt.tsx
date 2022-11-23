@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from "framer-motion"
-import "./ReloadPrompt.css"
 
 import { useEffect } from "react"
 import { useRegisterSW } from "virtual:pwa-register/react"

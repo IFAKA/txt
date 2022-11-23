@@ -2,7 +2,9 @@
 
 # TXT
 
-Is a note application that aims to keep it simple as possible. Once you create a Note, it will be stored in localStorage. If you are looking for a spefic note, you can use the searchbar. Also you can delete it longpressing the item in the list.
+Is a note application that aims to keep it simple as possible.
+Once you open the app, after a register the service worker, it will be able offline.
+You can create a note and it will be stored in localStorage. If you are looking for a spefic note, you can use the searchbar and you can delete a note longpressing the item in the list and acepting.
 Smooth UX, routes were built with the back button in mind.
 
 # Contents
@@ -13,9 +15,9 @@ Smooth UX, routes were built with the back button in mind.
 4. [ideas](#ideas)
 5. [Feedback](#feedback)
 
-## Tech Stack
+## Technologies
 
-**Client:** react, framer-motion, tailwind, react-markdown, react-syntax-highlighter
+**Client:** react, typescript, framer-motion, tailwindcss, react-markdown, react-syntax-highlighter, eslint, prettier
 
 ## Features
 
@@ -52,13 +54,13 @@ Smooth UX, routes were built with the back button in mind.
 
 ## Ideas
 
-- [ ] Add new filters based on your notes (ex: if detects `</>` then create a filter in the searchbar)
+- [ ] Add new filters based on your notes topics (ex: if detects `</>` then create a filter in the searchbar)
 - [ ] Code formater (maybe find how to implement prismjs plugin for that)
-- [ ] Improve search functionability
-- [ ] PWA or migrate project to React Native
-- [ ] Lazy loading in list (only render components that are on the viewport)
+- [ ] Improve search functionability (use description content)
+- [x] PWA
+- [x] Available Offline
 - [ ] Add date
 - [ ] Add reading time aproximation
-- [ ] Add task (they will have checkbox in the right in order to be able to discard them easily. Once you check a popup will apear to check completition. If you accept, it will be deleted from the list)
+- [ ] Add tasks (they will have checkbox in the right in order to be able to discard them easily. Once you check a popup will apear to check completition. If you accept, it will be deleted from the list)
 
 If you found something, create an issue to discuss it.
