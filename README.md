@@ -9,7 +9,7 @@ Smooth UX, routes were built with the back button in mind.
 
 # Contents
 
-1. [Tech Stack](#tech-stack)
+1. [Technologies](#Technologies)
 2. [Features](#features)
 3. [Screenshots](#screenshots)
 4. [ideas](#ideas)
