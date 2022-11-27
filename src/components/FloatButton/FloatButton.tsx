@@ -2,12 +2,7 @@ import { useData } from "@/context"
 import { emptyNote, IContext } from "@/models"
 import { toSentenceCase } from "@/utils"
 import { motion } from "framer-motion"
-import {
-  RiAddLine,
-  RiCheckLine,
-  RiDraftLine,
-  RiPencilLine,
-} from "react-icons/ri"
+import { RiAddLine, RiCheckLine, RiPencilLine } from "react-icons/ri"
 import { useLocation, useNavigate } from "react-router-dom"
 import uuid from "react-uuid"
 import { Render } from "../Render"

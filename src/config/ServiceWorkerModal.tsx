@@ -39,7 +39,7 @@ function ServiceWorkerModal() {
       )}
       {needRefresh && (
         <button
-          className="border px-3 py-2 rounded-xl"
+          className="px-3 py-2 rounded-xl border dark:border-none hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700"
           onClick={() => updateServiceWorker(true)}
         >
           Reload

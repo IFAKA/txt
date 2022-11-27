@@ -22,7 +22,7 @@ const Modal = ({
           onClick={close}
         >
           <motion.div
-            className="grid gap-4 place-items-center select-none rounded-xl max-w-xs relative dark:bg-slate-800 bg-white p-5"
+            className="grid gap-4 place-items-center select-none rounded-xl max-w-xs relative dark:bg-slate-900 bg-white p-5"
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
