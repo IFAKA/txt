@@ -1,4 +1,4 @@
-import { Modal } from "@/components"
+import { Modal, Render } from "@/components"
 import { useEffect } from "react"
 import { RiCheckboxCircleLine } from "react-icons/ri"
 import { useRegisterSW } from "virtual:pwa-register/react"
@@ -27,25 +27,19 @@ function ServiceWorkerModal() {
     return () => clearTimeout(timer)
   }, [offlineReady])
 
+  useEffect(() => {
+    needRefresh && updateServiceWorker(true)
+  }, [needRefresh])
+
   return (
-    <Modal renderWhen={offlineReady || needRefresh}>
-      {offlineReady ? (
+    <Render when={offlineReady}>
+      <Modal>
         <div className="flex items-center">
           <RiCheckboxCircleLine size={20} />
           <span className="ml-2">Available offline</span>
         </div>
-      ) : (
-        <span>New content available, click on reload button to update.</span>
-      )}
-      {needRefresh && (
-        <button
-          className="px-3 py-2 rounded-xl border dark:border-none hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700"
-          onClick={() => updateServiceWorker(true)}
-        >
-          Reload
-        </button>
-      )}
-    </Modal>
+      </Modal>
+    </Render>
   )
 }
 
