@@ -2,9 +2,15 @@ import { useData } from "@/context"
 import { emptyNote, IContext } from "@/models"
 import { toSentenceCase } from "@/utils"
 import { motion } from "framer-motion"
-import { RiCheckLine, RiDraftLine, RiPencilLine } from "react-icons/ri"
+import {
+  RiAddLine,
+  RiCheckLine,
+  RiDraftLine,
+  RiPencilLine,
+} from "react-icons/ri"
 import { useLocation, useNavigate } from "react-router-dom"
 import uuid from "react-uuid"
+import { Render } from "../Render"
 
 const FloatButton = () => {
   const {
@@ -42,6 +48,12 @@ const FloatButton = () => {
     }
   }
 
+  const inRoot = pathname === "/"
+  const inForm = pathname === "/form"
+  const inTxt = !inRoot && !inForm
+
+  const conditions = [inRoot, inForm, inTxt]
+
   return (
     <>
       {!(pathname !== "/" && pathname !== "/form" && !(title && desc)) &&
@@ -51,7 +63,7 @@ const FloatButton = () => {
               <motion.button
                 onClick={handleClick}
                 disabled={pathname === "/form" && !(title && desc)}
-                className="absolute bottom-0 right-0 border mr-4 mb-4 rounded-full p-3 dark:bg-slate-800 dark:disabled:bg-slate-900 bg-white dark:hover:bg-slate-700 hover:bg-slate-50 cursor-pointer shadow-md disabled:bg-slate-50 disabled:cursor-default disabled:shadow-none"
+                className="absolute bottom-0 right-0 mr-4 mb-4 rounded-full p-4 dark:disabled:bg-slate-900 cursor-pointer shadow-md disabled:bg-slate-50 disabled:cursor-default disabled:shadow-none border dark:border-none bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700"
                 aria-label="Float Button"
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -64,13 +76,11 @@ const FloatButton = () => {
                   duration: 0.3,
                 }}
               >
-                {pathname === "/" ? (
-                  <RiDraftLine />
-                ) : pathname === "/form" ? (
+                <Render when={conditions}>
+                  <RiAddLine />
                   <RiCheckLine />
-                ) : (
                   <RiPencilLine />
-                )}
+                </Render>
               </motion.button>
             </div>
           </div>

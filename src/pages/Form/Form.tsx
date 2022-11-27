@@ -24,7 +24,7 @@ const Form = () => {
       <motion.input
         onChange={handleTitle}
         value={title}
-        className="border-b p-2 mb-1 text-lg rounded-md h-fit w-full font-bold dark:bg-slate-800"
+        className="border-b dark:border-none py-3 px-4 mb-0.5 text-lg rounded-t-xl h-fit w-full font-bold dark:bg-slate-800"
         placeholder="Title"
         type="text"
         autoFocus
@@ -40,7 +40,7 @@ const Form = () => {
       <motion.textarea
         onChange={handleDesc}
         value={desc}
-        className="p-2 mb-2 w-full resize-none min-h-[calc(100%-107px)] dark:bg-slate-800"
+        className="py-3 px-4 rounded-b-xl w-full resize-none min-h-[calc(100%-112px)] dark:bg-slate-800"
         placeholder="Description"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}

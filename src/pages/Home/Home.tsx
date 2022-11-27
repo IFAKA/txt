@@ -59,7 +59,7 @@ const Home = () => {
           }}
         >
           <motion.div
-            className="text-left rounded-xl font-semibold w-full px-4 py-3 border cursor-pointer dark:hover:bg-slate-700 hover:bg-slate-50"
+            className="text-left rounded-xl font-semibold w-full px-4 py-3 cursor-pointer border dark:border-none hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             initial={{ opacity: 0, scale: 0.95 }}

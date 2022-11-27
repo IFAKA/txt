@@ -28,7 +28,7 @@ const Txt = () => {
       {title && desc ? (
         <>
           <motion.div
-            className="font-bold sm:text-3xl text-2xl sm:mt-5 mt-2.5"
+            className="px-2 font-bold sm:text-3xl text-2xl sm:mt-5 mt-2.5"
             initial={{ opacity: 0, scale: 0.95, x: -20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{
@@ -41,7 +41,7 @@ const Txt = () => {
             {title}
           </motion.div>
           <motion.div
-            className="w-full sm:text-lg tracking-wide pb-20 whitespace-pre-wrap sm:mt-10 mt-5"
+            className="px-2 w-full sm:text-lg tracking-wide pb-20 whitespace-pre-wrap sm:mt-10 mt-5"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}

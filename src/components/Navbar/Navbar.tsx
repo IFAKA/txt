@@ -18,14 +18,10 @@ const Navbar = () => {
   const inTxt = pathname !== "/" && pathname !== "/form" && !!(title && desc)
   const headerText = id ? "Edit" : "New"
 
-  const conditions = {
-    SearchBar: inRoot,
-    Header: inForm,
-    Back: inTxt,
-  }
+  const conditions = [inRoot, inForm, inTxt]
 
   return (
-    <div className="sticky border-b h-12 top-0 w-full flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 border-t dark:border-t-slate-700">
+    <div className="sticky border-b dark:border-b-0 h-12 top-0 w-full flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 border-t dark:border-t-slate-700">
       <div className="justify-center flex w-full max-w-3xl relative">
         <Render when={conditions}>
           <SearchBar />

@@ -8,7 +8,7 @@ const Back = () => {
   return (
     <motion.button
       onClick={back}
-      className="absolute left-0 -mt-5 rounded-full ml-1 p-3 hover:bg-slate-50"
+      className="absolute left-0 -mt-5 rounded-full ml-1 p-3 hover:bg-slate-50 dark:hover:bg-slate-700"
       aria-label="secondary action"
       initial={{ opacity: 0, scale: 0.95, x: 20 }}
       animate={{ opacity: 1, scale: 1, x: 0 }}
