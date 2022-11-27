@@ -7,9 +7,10 @@ const Context = createContext<IContext | null>(null)
 
 export const useData = () => useContext(Context)
 
-const initialState = localStorage.getItem("data")
-  ? JSON.parse(localStorage.getItem("data") as string)
-  : emptyData
+const initialState = () =>
+  localStorage.getItem("data")
+    ? JSON.parse(localStorage.getItem("data") as string)
+    : emptyData
 
 export const Provider = ({ children }: IChild) => {
   const [data, setData] = useState<Data>(initialState)
