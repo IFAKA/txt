@@ -1,4 +1,5 @@
 import { Modal, Render } from "@/components"
+import { AnimatePresence } from "framer-motion"
 import { useEffect } from "react"
 import { RiCheckboxCircleLine } from "react-icons/ri"
 import { useRegisterSW } from "virtual:pwa-register/react"
@@ -32,14 +33,16 @@ function ServiceWorkerModal() {
   }, [needRefresh])
 
   return (
-    <Render when={offlineReady}>
-      <Modal>
-        <div className="flex items-center">
-          <RiCheckboxCircleLine size={20} />
-          <span className="ml-2">Available offline</span>
-        </div>
-      </Modal>
-    </Render>
+    <AnimatePresence>
+      <Render when={offlineReady}>
+        <Modal>
+          <div className="flex items-center">
+            <RiCheckboxCircleLine size={20} />
+            <span className="ml-2">Available offline</span>
+          </div>
+        </Modal>
+      </Render>
+    </AnimatePresence>
   )
 }
 
