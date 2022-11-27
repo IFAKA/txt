@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion"
 import { isValidElement } from "react"
 
 interface RenderProps {
@@ -43,11 +44,15 @@ const Render = ({ children, when }: RenderProps) => {
 
   return (
     <>
-      {MultipleElements
-        ? children.map((child, i) => when[i] && child)
-        : SingleElement
-        ? when && children
-        : error()}
+      {MultipleElements ? (
+        <AnimatePresence>
+          {children.map((child, i) => when[i] && child)}
+        </AnimatePresence>
+      ) : SingleElement ? (
+        <AnimatePresence>{when && children}</AnimatePresence>
+      ) : (
+        error()
+      )}
     </>
   )
 }

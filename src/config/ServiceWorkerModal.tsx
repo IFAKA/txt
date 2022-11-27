@@ -34,14 +34,12 @@ function ServiceWorkerModal() {
 
   return (
     <Render when={offlineReady}>
-      <AnimatePresence>
-        <Modal>
-          <div className="flex items-center">
-            <RiCheckboxCircleLine size={20} />
-            <span className="ml-2">Available offline</span>
-          </div>
-        </Modal>
-      </AnimatePresence>
+      <Modal>
+        <div className="flex items-center">
+          <RiCheckboxCircleLine size={20} />
+          <span className="ml-2">Available offline</span>
+        </div>
+      </Modal>
     </Render>
   )
 }
