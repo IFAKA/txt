@@ -60,11 +60,6 @@ ul {
   margin-bottom: 1em;
 }
 
-li {
-  list-style: circle;
-  margin-bottom: 1em;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     background-color: #ffffff;
