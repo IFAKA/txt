@@ -1,5 +1,4 @@
 import { Modal, Render } from "@/components"
-import { AnimatePresence } from "framer-motion"
 import { useEffect } from "react"
 import { RiCheckboxCircleLine } from "react-icons/ri"
 import { useRegisterSW } from "virtual:pwa-register/react"

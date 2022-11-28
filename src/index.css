@@ -55,6 +55,16 @@ input[type="checkbox"][disabled] {
   background-color: #1972e8;
 }
 
+ul {
+  display: inline-grid;
+  margin-bottom: 1em;
+}
+
+li {
+  list-style: circle;
+  margin-bottom: 1em;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     background-color: #ffffff;
