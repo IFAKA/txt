@@ -28,7 +28,7 @@ const Txt = () => {
       {title && desc ? (
         <>
           <motion.div
-            className="px-2 font-bold sm:text-3xl text-2xl sm:mt-5 mt-2.5"
+            className="px-2 font-bold sm:text-4xl text-3xl sm:mt-5 mt-2.5"
             initial={{ opacity: 0, scale: 0.95, x: -20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{
